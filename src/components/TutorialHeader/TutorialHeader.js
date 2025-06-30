@@ -35,6 +35,9 @@ const TutorialHeader = () => (
           <Link href="/repos" passHref legacyBehavior>
             <HeaderMenuItem>Repositories</HeaderMenuItem>
           </Link>
+          <Link href="/projects" passHref legacyBehavior>
+            <HeaderMenuItem>Projects</HeaderMenuItem>
+          </Link>
         </HeaderNavigation>
         <SideNav
           aria-label="Side navigation"
@@ -45,6 +48,9 @@ const TutorialHeader = () => (
             <HeaderSideNavItems>
               <Link href="/repos" passHref legacyBehavior>
                 <HeaderMenuItem>Repositories</HeaderMenuItem>
+              </Link>
+              <Link href="/projects" passHref legacyBehavior>
+                <HeaderMenuItem>Projects</HeaderMenuItem>
               </Link>
             </HeaderSideNavItems>
           </SideNavItems>
