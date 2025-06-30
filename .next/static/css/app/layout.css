@@ -23967,6 +23967,11 @@ html {
   padding-bottom: 1rem;
 }
 
+.publication-page__r1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 @media (min-width: 42rem) {
   .cds--grid--no-gutter {
     padding-left: 1rem;
