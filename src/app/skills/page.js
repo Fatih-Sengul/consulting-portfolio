@@ -16,6 +16,12 @@ import {
   CloudApp,
   Apps,
 } from '@carbon/icons-react';
+  Accordion,
+  AccordionItem,
+  Grid,
+  Column,
+  Tag,
+} from '@carbon/react';
 
 const skillsData = [
   {
@@ -50,6 +56,21 @@ const skillsData = [
       { name: 'Communication', level: 85 },
       { name: 'Agile Methodologies', level: 80 },
       { name: 'Problem Solving', level: 90 },
+
+    skills: ['JavaScript', 'TypeScript', 'Python', 'C++', 'SQL'],
+  },
+  {
+    category: 'SAP Modules',
+    skills: ['SAP HANA', 'SAP Fiori', 'SAP BW', 'SAP ABAP', 'SAP PI/PO'],
+  },
+  {
+    category: 'Soft Skills',
+    skills: [
+      'Leadership',
+      'Communication',
+      'Agile Methodologies',
+      'Problem Solving',
+      'Mentoring',
     ],
   },
   {
@@ -75,6 +96,11 @@ const skillsData = [
       { name: 'Sass', level: 90 },
       { name: 'Git', level: 85 },
     ],
+    skills: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'Jenkins'],
+  },
+  {
+    category: 'Other Technologies',
+    skills: ['GraphQL', 'Redux', 'Jest', 'Sass', 'Git'],
   },
 ];
 
@@ -114,6 +140,18 @@ export default function SkillsPage() {
           </Tile>
         </Column>
       ))}
+        <Accordion align="start">
+          {skillsData.map(({ category, skills }) => (
+            <AccordionItem key={category} title={category}>
+              <div className="skills-tags">
+                {skills.map((skill) => (
+                  <Tag key={skill}>{skill}</Tag>
+                ))}
+              </div>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Column>
     </Grid>
   );
 }
