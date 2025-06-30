@@ -1,0 +1,17 @@
+@use '@carbon/react/scss/spacing' as *;
+
+.skills-page__r1 {
+  padding-top: $spacing-05;
+  padding-bottom: $spacing-05;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-03;
+  margin-top: $spacing-03;
+}
+
+.skills-tags .cds--tag:hover {
+  background-color: var(--cds-layer-hover);
+}
