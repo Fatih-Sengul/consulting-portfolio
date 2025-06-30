@@ -43,6 +43,8 @@ const TutorialHeader = () => (
           </Link>
           <Link href="/skills" passHref legacyBehavior>
             <HeaderMenuItem>Skills</HeaderMenuItem>
+          <Link href="/experience" passHref legacyBehavior>
+            <HeaderMenuItem>Experience</HeaderMenuItem>
           </Link>
         </HeaderNavigation>
         <SideNav
@@ -60,6 +62,8 @@ const TutorialHeader = () => (
               </Link>
               <Link href="/skills" passHref legacyBehavior>
                 <HeaderMenuItem>Skills</HeaderMenuItem>
+              <Link href="/experience" passHref legacyBehavior>
+                <HeaderMenuItem>Experience</HeaderMenuItem>
               </Link>
             </HeaderSideNavItems>
           </SideNavItems>
