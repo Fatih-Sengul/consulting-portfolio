@@ -23997,6 +23997,27 @@ html {
   gap: 0.25rem;
 }
 
+.skills-page__r1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skills-tags .cds--tag:hover {
+  background-color: var(--cds-layer-hover);
+}
+
+.experience-page__r1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 @media (min-width: 42rem) {
   .cds--grid--no-gutter {
     padding-left: 1rem;

@@ -56,17 +56,33 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/projects/page.js": {
+    "(app-client)/./src/app/publications/page.js": {
       "*": {
-        "id": "(sc_client)/./src/app/projects/page.js",
+        "id": "(sc_client)/./src/app/publications/page.js",
         "name": "*",
         "chunks": [],
         "async": false
       }
     },
-    "(app-client)/./src/app/publications/page.js": {
+    "(app-client)/./src/app/experience/page.js": {
       "*": {
-        "id": "(sc_client)/./src/app/publications/page.js",
+        "id": "(sc_client)/./src/app/experience/page.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/skills/page.js": {
+      "*": {
+        "id": "(sc_client)/./src/app/skills/page.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/projects/page.js": {
+      "*": {
+        "id": "(sc_client)/./src/app/projects/page.js",
         "name": "*",
         "chunks": [],
         "async": false
@@ -179,19 +195,35 @@
       ],
       "async": false
     },
-    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/projects/page.js": {
-      "id": "(app-client)/./src/app/projects/page.js",
-      "name": "*",
-      "chunks": [
-        "app/projects/page:static/chunks/app/projects/page.js"
-      ],
-      "async": false
-    },
     "/Users/fatihsengul/Desktop/ConsultingPort/src/app/publications/page.js": {
       "id": "(app-client)/./src/app/publications/page.js",
       "name": "*",
       "chunks": [
         "app/publications/page:static/chunks/app/publications/page.js"
+      ],
+      "async": false
+    },
+    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/experience/page.js": {
+      "id": "(app-client)/./src/app/experience/page.js",
+      "name": "*",
+      "chunks": [
+        "app/experience/page:static/chunks/app/experience/page.js"
+      ],
+      "async": false
+    },
+    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/skills/page.js": {
+      "id": "(app-client)/./src/app/skills/page.js",
+      "name": "*",
+      "chunks": [
+        "app/skills/page:static/chunks/app/skills/page.js"
+      ],
+      "async": false
+    },
+    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/projects/page.js": {
+      "id": "(app-client)/./src/app/projects/page.js",
+      "name": "*",
+      "chunks": [
+        "app/projects/page:static/chunks/app/projects/page.js"
       ],
       "async": false
     }
@@ -201,7 +233,9 @@
     "/Users/fatihsengul/Desktop/ConsultingPort/src/app/layout": [
       "static/css/app/layout.css"
     ],
-    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/projects/page": [],
-    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/publications/page": []
+    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/publications/page": [],
+    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/experience/page": [],
+    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/skills/page": [],
+    "/Users/fatihsengul/Desktop/ConsultingPort/src/app/projects/page": []
   }
 }
