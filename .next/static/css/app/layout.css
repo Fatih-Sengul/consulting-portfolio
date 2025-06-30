@@ -23972,6 +23972,31 @@ html {
   padding-bottom: 1rem;
 }
 
+.projects-page__r1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.project-tile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.project-icon {
+  margin-bottom: 0.5rem;
+}
+
+.project-tags {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
 @media (min-width: 42rem) {
   .cds--grid--no-gutter {
     padding-left: 1rem;
