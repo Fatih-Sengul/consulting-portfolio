@@ -24002,14 +24002,33 @@ html {
   padding-bottom: 1rem;
 }
 
-.skills-tags {
+.skill-tile {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.skill-tile:hover {
+  background-color: var(--cds-layer-hover);
+}
+
+.skill-header {
+  margin-bottom: 0.5rem;
+}
+
+.skill-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.skill-progress .skills-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.5rem;
 }
-
-.skills-tags .cds--tag:hover {
+.skill-progress .skills-tags .cds--tag:hover {
   background-color: var(--cds-layer-hover);
 }
 

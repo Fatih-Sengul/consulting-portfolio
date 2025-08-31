@@ -8,6 +8,9 @@ import {
   Column,
   Tile,
   ProgressBar,
+  Accordion,
+  AccordionItem,
+  Tag,
 } from '@carbon/react';
 import {
   Code,
@@ -16,12 +19,6 @@ import {
   CloudApp,
   Apps,
 } from '@carbon/icons-react';
-  Accordion,
-  AccordionItem,
-  Grid,
-  Column,
-  Tag,
-} from '@carbon/react';
 
 const skillsData = [
   {
@@ -56,21 +53,6 @@ const skillsData = [
       { name: 'Communication', level: 85 },
       { name: 'Agile Methodologies', level: 80 },
       { name: 'Problem Solving', level: 90 },
-
-    skills: ['JavaScript', 'TypeScript', 'Python', 'C++', 'SQL'],
-  },
-  {
-    category: 'SAP Modules',
-    skills: ['SAP HANA', 'SAP Fiori', 'SAP BW', 'SAP ABAP', 'SAP PI/PO'],
-  },
-  {
-    category: 'Soft Skills',
-    skills: [
-      'Leadership',
-      'Communication',
-      'Agile Methodologies',
-      'Problem Solving',
-      'Mentoring',
     ],
   },
   {
@@ -96,11 +78,6 @@ const skillsData = [
       { name: 'Sass', level: 90 },
       { name: 'Git', level: 85 },
     ],
-    skills: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'Jenkins'],
-  },
-  {
-    category: 'Other Technologies',
-    skills: ['GraphQL', 'Redux', 'Jest', 'Sass', 'Git'],
   },
 ];
 
@@ -120,9 +97,7 @@ export default function SkillsPage() {
         <Column key={category} lg={5} md={4} sm={4}>
           <Tile className="skill-tile">
             <div className="skill-header">
-              {Icon && (
-                <Icon width={32} height={32} aria-hidden="true" />
-              )}
+              {Icon && <Icon width={32} height={32} aria-hidden="true" />}
               <h3 style={{ marginBottom: '0.25rem' }}>{category}</h3>
               <p className="skill-description">{description}</p>
             </div>
@@ -137,21 +112,18 @@ export default function SkillsPage() {
                 />
               ))}
             </div>
+            <Accordion align="start">
+              <AccordionItem title="Skills">
+                <div className="skills-tags">
+                  {skills.map(({ name }) => (
+                    <Tag key={name}>{name}</Tag>
+                  ))}
+                </div>
+              </AccordionItem>
+            </Accordion>
           </Tile>
         </Column>
       ))}
-        <Accordion align="start">
-          {skillsData.map(({ category, skills }) => (
-            <AccordionItem key={category} title={category}>
-              <div className="skills-tags">
-                {skills.map((skill) => (
-                  <Tag key={skill}>{skill}</Tag>
-                ))}
-              </div>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </Column>
     </Grid>
   );
 }
