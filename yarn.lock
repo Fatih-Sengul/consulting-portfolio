@@ -21,7 +21,7 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
-"@carbon/charts-react@^1.13.0":
+"@carbon/charts-react@^1.27.0":
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.27.0.tgz#3a7829e1534abc90f6d8db4bf237bf63ad4ada81"
   integrity sha512-WQA/YKhAhN6ZsWUT7ZBH0CGJP0qY+rIwzUm3NnMZtMAwYZfgU6HuQohBDuW1pPHx8aqArhWm7Ilx1JGh3dOcew==
@@ -30,7 +30,7 @@
     "@carbon/icons-react" "^11.64.0"
     "@ibm/telemetry-js" "^1.9.1"
 
-"@carbon/charts@1.27.0", "@carbon/charts@^1.13.0":
+"@carbon/charts@1.27.0", "@carbon/charts@^1.27.0":
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.27.0.tgz#1db51dd7ec5634e4f36d8f1f109b21c45aa9fb64"
   integrity sha512-iOxm3iY1kys/Xfp1/OQDMUdoU+HWcK7K//xSU8RAso/lKFzFc6ztt6NhimJFtaL+0Qn/HHbw8JZsD/djEK6k6w==
