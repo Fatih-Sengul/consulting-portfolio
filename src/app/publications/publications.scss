@@ -1,0 +1,459 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/type' as *;
+
+.publications-page {
+  background-color: $background;
+  min-height: 100vh;
+  padding-bottom: $spacing-09;
+
+  // Page Header
+  &__header {
+    padding-top: $spacing-06;
+    margin-bottom: $spacing-05;
+  }
+
+  &__title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $spacing-05;
+    margin-bottom: $spacing-07;
+
+    @include breakpoint-down(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-05;
+    }
+  }
+
+  &__title {
+    @include type-style('heading-05');
+    color: $text-primary;
+    margin: 0;
+  }
+
+  // Section A: Metrics Overview
+  &__metrics {
+    margin-bottom: $spacing-06;
+  }
+
+  // Section B: Filters
+  &__filters {
+    margin-bottom: $spacing-07;
+  }
+
+  // Section C: Results
+  &__results {
+    margin-bottom: $spacing-06;
+  }
+
+  &__results-header {
+    margin-bottom: $spacing-05;
+  }
+
+  &__results-title {
+    @include type-style('heading-03');
+    color: $text-primary;
+    margin: 0;
+  }
+
+  &__no-results {
+    text-align: center;
+    padding: $spacing-09 $spacing-05;
+
+    p {
+      @include type-style('body-01');
+      color: $text-secondary;
+      margin-bottom: $spacing-05;
+    }
+  }
+
+  // Pagination
+  &__pagination {
+    margin-top: $spacing-07;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// Metric Tiles
+.metric-tile {
+  height: 100%;
+  padding: $spacing-05;
+  display: flex;
+  align-items: center;
+  gap: $spacing-05;
+  transition: all 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  border-left: 3px solid transparent;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left-color: $border-interactive;
+  }
+
+  &--highlight {
+    background-color: $layer-accent-01;
+
+    .metric-tile__number {
+      color: $text-on-color;
+    }
+  }
+
+  &__icon {
+    color: $icon-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+      fill: currentColor;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__number {
+    @include type-style('productive-heading-06');
+    color: $text-primary;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: $spacing-02;
+  }
+
+  &__label {
+    @include type-style('label-01');
+    color: $text-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.32px;
+  }
+
+  &__label-truncate {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: help;
+    border-bottom: 1px dotted $border-subtle-01;
+  }
+}
+
+// Filter Bar
+.filter-bar {
+  padding: $spacing-06;
+
+  &__keywords {
+    margin-top: $spacing-06;
+    padding-top: $spacing-05;
+    border-top: 1px solid $border-subtle-01;
+  }
+
+  &__keywords-label {
+    @include type-style('label-01');
+    color: $text-secondary;
+    margin-bottom: $spacing-04;
+    font-weight: 600;
+  }
+
+  &__keywords-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-03;
+  }
+}
+
+.filter-keyword-tag {
+  cursor: pointer;
+  transition: all 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Publications Grid
+.publications-grid {
+  display: grid;
+  gap: $spacing-05;
+
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoint-down(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint-down(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Publication Card
+.publication-card {
+  height: 100%;
+  padding: $spacing-06;
+  display: flex;
+  flex-direction: column;
+  transition: all 200ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  border-left: 3px solid transparent;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    border-left-color: $border-interactive;
+
+    .publication-card__title a {
+      color: $link-primary-hover;
+    }
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-03;
+    margin-bottom: $spacing-05;
+  }
+
+  &__title {
+    @include type-style('productive-heading-03');
+    margin: 0 0 $spacing-03;
+    line-height: 1.4;
+
+    a {
+      color: $link-primary;
+      text-decoration: none;
+      transition: color 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+      &:hover {
+        color: $link-primary-hover;
+        text-decoration: underline;
+      }
+
+      &:visited {
+        color: $link-visited;
+      }
+    }
+  }
+
+  &__venue {
+    @include type-style('label-01');
+    color: $text-secondary;
+    margin: 0 0 $spacing-05;
+    font-style: italic;
+  }
+
+  &__summary {
+    @include type-style('body-01');
+    color: $text-secondary;
+    margin-bottom: $spacing-05;
+    flex: 1;
+    line-height: 1.6;
+
+    p {
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-03;
+    margin-bottom: $spacing-05;
+  }
+
+  &__metrics {
+    display: flex;
+    gap: $spacing-05;
+    margin-bottom: $spacing-05;
+    padding: $spacing-04 0;
+    border-top: 1px solid $border-subtle-01;
+    border-bottom: 1px solid $border-subtle-01;
+  }
+
+  &__metric {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    @include type-style('label-01');
+    color: $text-secondary;
+
+    svg {
+      fill: $icon-secondary;
+      flex-shrink: 0;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-03;
+    margin-top: auto;
+    padding-top: $spacing-04;
+
+    @include breakpoint-down(sm) {
+      flex-direction: column;
+
+      button,
+      a {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Carbon Component Overrides for Better Appearance
+.cds--search-input {
+  background-color: $field-01;
+}
+
+.cds--dropdown {
+  background-color: $field-01;
+}
+
+.cds--pagination {
+  background-color: transparent;
+  border-top: 1px solid $border-subtle-01;
+  padding-top: $spacing-05;
+}
+
+// Responsive Typography Adjustments
+@include breakpoint-down(md) {
+  .publications-page__title {
+    @include type-style('heading-04');
+  }
+
+  .publications-page__results-title {
+    @include type-style('heading-02');
+  }
+
+  .publication-card__title {
+    @include type-style('productive-heading-02');
+  }
+
+  .metric-tile__number {
+    @include type-style('productive-heading-05');
+  }
+}
+
+@include breakpoint-down(sm) {
+  .publications-page__title {
+    @include type-style('heading-03');
+  }
+
+  .metric-tile {
+    flex-direction: column;
+    text-align: center;
+
+    &__icon {
+      margin-bottom: $spacing-03;
+    }
+  }
+}
+
+// Smooth Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.publication-card {
+  animation: fadeIn 300ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+// Print Styles
+@media print {
+  .publications-page__filters,
+  .publications-page__pagination,
+  .publication-card__actions {
+    display: none;
+  }
+
+  .publication-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+// Accessibility Improvements
+.publication-card:focus-within {
+  outline: 2px solid $focus;
+  outline-offset: 2px;
+}
+
+// Loading States (for future enhancement)
+.publications-page--loading {
+  .publication-card {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+// Dark Mode Support (Carbon handles most of this)
+@media (prefers-color-scheme: dark) {
+  .metric-tile {
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .publication-card {
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+// Tooltip Styling Enhancement
+.cds--tooltip__trigger {
+  width: 100%;
+}
+
+// Tag Filter Enhancement
+.cds--tag--filter {
+  &:not(:disabled):hover {
+    background-color: $background-hover;
+  }
+}
+
+// Ensure proper spacing in Grid
+.cds--grid {
+  &.publications-page {
+    max-width: 100%;
+    padding-left: $spacing-05;
+    padding-right: $spacing-05;
+
+    @include breakpoint(lg) {
+      padding-left: $spacing-07;
+      padding-right: $spacing-07;
+    }
+
+    @include breakpoint(xlg) {
+      padding-left: $spacing-09;
+      padding-right: $spacing-09;
+    }
+  }
+}
