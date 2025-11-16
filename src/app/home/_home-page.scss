@@ -18,11 +18,7 @@
 .home-page__hero {
   padding-top: $spacing-10;
   padding-bottom: $spacing-13;
-  background: linear-gradient(
-    to bottom,
-    $layer-01 0%,
-    $layer-02 100%
-  );
+  background: linear-gradient(to bottom, $layer-01 0%, $layer-02 100%);
 
   @include breakpoint-down(md) {
     padding-top: $spacing-07;
@@ -45,14 +41,14 @@
 }
 
 .home-page__hero-heading {
-  @include type-style('fluid-heading-05');
+  @include type-style('productive-heading-05');
   font-weight: 600;
   color: $text-primary;
   margin: 0;
   line-height: 1.2;
 
   @include breakpoint-down(md) {
-    @include type-style('fluid-heading-04');
+    @include type-style('productive-heading-04');
   }
 }
 
@@ -84,7 +80,8 @@
     flex-direction: column;
     gap: $spacing-03;
 
-    button, a {
+    button,
+    a {
       width: 100%;
     }
   }
@@ -151,7 +148,7 @@
 }
 
 .home-page__stats-number {
-  @include type-style('fluid-heading-04');
+  @include type-style('productive-heading-04');
   font-weight: 600;
   color: $text-primary;
   line-height: 1.2;
@@ -200,7 +197,7 @@
 }
 
 .home-page__metric-number {
-  @include type-style('fluid-heading-04');
+  @include type-style('productive-heading-04');
   font-weight: 600;
   color: $text-primary;
   margin-bottom: $spacing-03;
@@ -224,7 +221,7 @@
 }
 
 .home-page__section-heading {
-  @include type-style('fluid-heading-04');
+  @include type-style('productive-heading-04');
   font-weight: 600;
   color: $text-primary;
   margin-bottom: $spacing-09;
@@ -380,13 +377,13 @@
 }
 
 .home-page__cta-heading {
-  @include type-style('fluid-heading-05');
+  @include type-style('productive-heading-05');
   font-weight: 600;
   color: $text-primary;
   margin-bottom: $spacing-06;
 
   @include breakpoint-down(md) {
-    @include type-style('fluid-heading-04');
+    @include type-style('productive-heading-04');
   }
 }
 
@@ -410,7 +407,8 @@
     flex-direction: column;
     gap: $spacing-03;
 
-    button, a {
+    button,
+    a {
       width: 100%;
     }
   }

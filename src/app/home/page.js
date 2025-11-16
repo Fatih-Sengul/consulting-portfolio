@@ -21,19 +21,14 @@ import {
   Code,
   DataProcessing,
   DeliverInsights,
-  MachineLearning,
+  MachineLearning_05 as MachineLearning,
 } from '@carbon/pictograms-react';
 
 export default function LandingPage() {
   return (
     <Grid className="home-page" fullWidth>
       {/* SECTION A - HERO / INTRO */}
-      <Column
-        lg={16}
-        md={8}
-        sm={4}
-        className="home-page__hero"
-      >
+      <Column lg={16} md={8} sm={4} className="home-page__hero">
         <Grid>
           <Column lg={8} md={8} sm={4} className="home-page__hero-content">
             <div className="home-page__hero-label">
