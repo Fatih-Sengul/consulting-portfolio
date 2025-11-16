@@ -16,9 +16,14 @@
     "format:diff": "prettier --list-different \"**/*.{js,md,scss}\""
   },
   "dependencies": {
+    "@carbon/charts": "^1.13.0",
+    "@carbon/charts-react": "^1.13.0",
+    "@carbon/icons-react": "^11.50.0",
     "@carbon/pictograms-react": "^11.50.0",
     "@carbon/react": "^1.35.0",
+    "@carbon/styles": "^1.35.0",
     "@octokit/core": "4.2.0",
+    "d3": "^7.8.5",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "next": "13.4.9",
