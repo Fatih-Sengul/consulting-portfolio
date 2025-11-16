@@ -19,7 +19,7 @@ import {
   Download,
   Launch,
   DocumentPdf,
-  Citation,
+  ChartBar,
   Activity,
   Analytics,
   Book,
@@ -188,7 +188,7 @@ const PublicationsPage = () => {
           <Column lg={4} md={2} sm={4}>
             <Tile className="metric-tile">
               <div className="metric-tile__icon">
-                <Citation size={32} />
+                <ChartBar size={32} />
               </div>
               <div className="metric-tile__content">
                 <div className="metric-tile__number">{metrics.totalCitations}</div>
@@ -376,7 +376,7 @@ const PublicationsPage = () => {
                 {/* Metrics Row */}
                 <div className="publication-card__metrics">
                   <div className="publication-card__metric">
-                    <Citation size={16} />
+                    <ChartBar size={16} />
                     <span>{publication.citations} citations</span>
                   </div>
                   {publication.hIndexContribution && (
