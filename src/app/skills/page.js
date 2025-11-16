@@ -23,18 +23,10 @@ import {
   ArrowRight,
   Launch,
 } from '@carbon/icons-react';
-import { DonutChart, SimpleBarChart } from '@carbon/charts-react';
-import '@carbon/charts/styles.css';
 
 import { skillDomains } from '../../data/skillDomains';
 import { techStack } from '../../data/techStack';
 import { skillEvidence } from '../../data/skillEvidence';
-import {
-  focusDistributionData,
-  focusDistributionOptions,
-  proficiencyData,
-  proficiencyOptions,
-} from '../../data/skillsCharts';
 import './skills-page.scss';
 
 // Icon mapping for skill domains
@@ -156,7 +148,9 @@ export default function SkillsPage() {
       {/* Frameworks & Libraries */}
       <Column lg={5} md={8} sm={4}>
         <div className="tech-stack-column">
-          <h3 className="tech-stack-column__title">Frameworks &amp; Libraries</h3>
+          <h3 className="tech-stack-column__title">
+            Frameworks &amp; Libraries
+          </h3>
           <div className="tech-stack-column__items">
             {techStack.frameworks.map((framework, idx) => (
               <div key={idx} className="tech-item">
@@ -237,38 +231,7 @@ export default function SkillsPage() {
         </StructuredListWrapper>
       </Column>
 
-      {/* SECTION 5: CHARTS */}
-      <Column lg={16} md={8} sm={4} className="skills-page__section">
-        <h2 className="skills-page__section-title">Visual Overview</h2>
-        <p className="skills-page__section-subtitle">
-          Charts showing current focus distribution and relative proficiency levels
-          across key domains.
-        </p>
-      </Column>
-
-      <Column lg={8} md={4} sm={4}>
-        <Tile className="chart-tile">
-          <DonutChart
-            data={focusDistributionData}
-            options={focusDistributionOptions}
-          />
-          <p className="chart-tile__caption">
-            Distribution of my current technical focus and time allocation across
-            domains.
-          </p>
-        </Tile>
-      </Column>
-
-      <Column lg={8} md={4} sm={4}>
-        <Tile className="chart-tile">
-          <SimpleBarChart data={proficiencyData} options={proficiencyOptions} />
-          <p className="chart-tile__caption">
-            Self-assessed proficiency levels by domain on a 5-point scale.
-          </p>
-        </Tile>
-      </Column>
-
-      {/* SECTION 6: OPTIONAL CTA */}
+      {/* SECTION 5: OPTIONAL CTA */}
       <Column lg={16} md={8} sm={4} className="skills-page__cta">
         <Tile className="cta-tile">
           <h2 className="cta-tile__heading">Want to work together?</h2>
