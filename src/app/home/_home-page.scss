@@ -1,0 +1,438 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/theme' as *;
+
+// ================================
+// HOME PAGE STYLES
+// ================================
+
+.home-page {
+  background-color: $background;
+}
+
+// ================================
+// SECTION A - HERO
+// ================================
+
+.home-page__hero {
+  padding-top: $spacing-10;
+  padding-bottom: $spacing-13;
+  background: linear-gradient(
+    to bottom,
+    $layer-01 0%,
+    $layer-02 100%
+  );
+
+  @include breakpoint-down(md) {
+    padding-top: $spacing-07;
+    padding-bottom: $spacing-10;
+  }
+}
+
+.home-page__hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-06;
+
+  @include breakpoint-down(md) {
+    gap: $spacing-05;
+  }
+}
+
+.home-page__hero-label {
+  margin-bottom: $spacing-03;
+}
+
+.home-page__hero-heading {
+  @include type-style('fluid-heading-05');
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0;
+  line-height: 1.2;
+
+  @include breakpoint-down(md) {
+    @include type-style('fluid-heading-04');
+  }
+}
+
+.home-page__hero-subheading {
+  @include type-style('body-02');
+  color: $text-secondary;
+  max-width: 90%;
+  line-height: 1.6;
+  margin: 0;
+
+  @include breakpoint-down(md) {
+    max-width: 100%;
+  }
+}
+
+.home-page__hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-03;
+  margin-top: $spacing-02;
+}
+
+.home-page__hero-buttons {
+  display: flex;
+  gap: $spacing-05;
+  margin-top: $spacing-05;
+
+  @include breakpoint-down(sm) {
+    flex-direction: column;
+    gap: $spacing-03;
+
+    button, a {
+      width: 100%;
+    }
+  }
+}
+
+.home-page__hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint-down(md) {
+    margin-top: $spacing-09;
+  }
+}
+
+.home-page__hero-illustration {
+  width: 100%;
+  position: relative;
+}
+
+.home-page__hero-illustration-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $layer-accent-01;
+  border-radius: $spacing-03;
+  overflow: hidden;
+}
+
+.home-page__pictogram {
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  fill: $icon-primary;
+}
+
+.home-page__stats-overlay {
+  position: absolute;
+  bottom: $spacing-05;
+  right: $spacing-05;
+  min-width: 200px;
+  padding: $spacing-05;
+  background-color: $layer-01;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  @include breakpoint-down(sm) {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    margin-top: $spacing-05;
+  }
+}
+
+.home-page__stats-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-05;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.home-page__stats-number {
+  @include type-style('fluid-heading-04');
+  font-weight: 600;
+  color: $text-primary;
+  line-height: 1.2;
+}
+
+.home-page__stats-label {
+  @include type-style('label-01');
+  color: $text-secondary;
+  margin-top: $spacing-02;
+}
+
+// ================================
+// SECTION B - METRICS
+// ================================
+
+.home-page__metrics {
+  padding-top: $spacing-10;
+  padding-bottom: $spacing-10;
+  background-color: $layer-01;
+}
+
+.home-page__metric-tile {
+  height: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: $spacing-06;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @include breakpoint-down(md) {
+    min-height: 180px;
+  }
+}
+
+.home-page__metric-icon {
+  fill: $icon-primary;
+  margin-bottom: $spacing-05;
+  opacity: 0.8;
+}
+
+.home-page__metric-number {
+  @include type-style('fluid-heading-04');
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: $spacing-03;
+  line-height: 1.2;
+}
+
+.home-page__metric-caption {
+  @include type-style('body-01');
+  color: $text-secondary;
+  line-height: 1.5;
+}
+
+// ================================
+// SECTION C - PERSONAS
+// ================================
+
+.home-page__personas {
+  padding-top: $spacing-13;
+  padding-bottom: $spacing-13;
+  background-color: $background;
+}
+
+.home-page__section-heading {
+  @include type-style('fluid-heading-04');
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: $spacing-09;
+  padding-left: $spacing-05;
+
+  @include breakpoint-down(md) {
+    padding-left: $spacing-03;
+    margin-bottom: $spacing-07;
+  }
+}
+
+.home-page__persona-tile {
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-07;
+  border: 1px solid $border-subtle-01;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: $border-interactive;
+    transform: translateY(-4px);
+  }
+
+  @include breakpoint-down(md) {
+    min-height: auto;
+    margin-bottom: $spacing-05;
+  }
+}
+
+.home-page__persona-icon {
+  fill: $icon-primary;
+  margin-bottom: $spacing-06;
+  opacity: 0.9;
+}
+
+.home-page__persona-title {
+  @include type-style('productive-heading-03');
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: $spacing-05;
+}
+
+.home-page__persona-description {
+  @include type-style('body-01');
+  color: $text-secondary;
+  line-height: 1.6;
+  margin-bottom: $spacing-06;
+  flex-grow: 0;
+}
+
+.home-page__persona-list {
+  @include type-style('body-01');
+  color: $text-secondary;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 $spacing-06 0;
+  flex-grow: 1;
+
+  li {
+    padding-left: $spacing-05;
+    margin-bottom: $spacing-03;
+    position: relative;
+
+    &:before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: $icon-secondary;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.home-page__persona-link {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+// ================================
+// SECTION D - FEATURED WORK
+// ================================
+
+.home-page__featured {
+  padding-top: $spacing-13;
+  padding-bottom: $spacing-13;
+  background-color: $layer-01;
+}
+
+.home-page__featured-tile {
+  height: 100%;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-07;
+  border-left: 3px solid $border-interactive;
+  transition: border-left-width 0.2s ease, padding-left 0.2s ease;
+
+  &:hover {
+    border-left-width: 6px;
+    padding-left: calc(#{$spacing-07} - 3px);
+  }
+
+  @include breakpoint-down(md) {
+    min-height: auto;
+    margin-bottom: $spacing-05;
+  }
+}
+
+.home-page__featured-title {
+  @include type-style('productive-heading-03');
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: $spacing-05;
+}
+
+.home-page__featured-description {
+  @include type-style('body-01');
+  color: $text-secondary;
+  line-height: 1.6;
+  margin-bottom: $spacing-06;
+  flex-grow: 1;
+}
+
+.home-page__featured-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-03;
+  margin-bottom: $spacing-05;
+}
+
+.home-page__featured-button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+// ================================
+// SECTION E - CALL TO ACTION
+// ================================
+
+.home-page__cta {
+  padding-top: $spacing-13;
+  padding-bottom: $spacing-13;
+  background: linear-gradient(
+    135deg,
+    $layer-accent-01 0%,
+    $layer-accent-02 100%
+  );
+}
+
+.home-page__cta-heading {
+  @include type-style('fluid-heading-05');
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: $spacing-06;
+
+  @include breakpoint-down(md) {
+    @include type-style('fluid-heading-04');
+  }
+}
+
+.home-page__cta-text {
+  @include type-style('body-02');
+  color: $text-secondary;
+  line-height: 1.6;
+  margin-bottom: $spacing-08;
+  max-width: 85%;
+
+  @include breakpoint-down(md) {
+    max-width: 100%;
+  }
+}
+
+.home-page__cta-buttons {
+  display: flex;
+  gap: $spacing-05;
+
+  @include breakpoint-down(sm) {
+    flex-direction: column;
+    gap: $spacing-03;
+
+    button, a {
+      width: 100%;
+    }
+  }
+}
+
+// ================================
+// GLOBAL RESPONSIVE ADJUSTMENTS
+// ================================
+
+@include breakpoint-down(md) {
+  .home-page__hero,
+  .home-page__metrics,
+  .home-page__personas,
+  .home-page__featured,
+  .home-page__cta {
+    padding-left: $spacing-05;
+    padding-right: $spacing-05;
+  }
+}
+
+// Ensure proper spacing for nested grids
+.home-page .cds--grid {
+  padding-left: 0;
+  padding-right: 0;
+}

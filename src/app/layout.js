@@ -3,8 +3,8 @@ import './globals.scss';
 import { Providers } from './providers';
 
 export const metadata = {
-  title: 'Carbon + Next13',
-  description: 'IBM Carbon Tutorial with NextJS 13',
+  title: 'Fatih Şengül - SAP ABAP Consultant, Full-Stack Engineer & AI Researcher',
+  description: 'Portfolio of Fatih Şengül: SAP ABAP Consultant, Full-Stack Java Developer, and AI Researcher. Intel oneAPI Ambassador and IBM Z Ambassador.',
 };
 
 export default function RootLayout({ children }) {
