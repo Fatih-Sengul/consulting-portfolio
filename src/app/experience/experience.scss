@@ -1,0 +1,737 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/type' as *;
+
+.experience-page {
+  background-color: $background;
+  min-height: 100vh;
+  padding-bottom: $spacing-09;
+
+  // Page Header
+  &__header {
+    padding-top: $spacing-06;
+    margin-bottom: $spacing-05;
+  }
+
+  &__title-section {
+    margin-top: $spacing-05;
+    margin-bottom: $spacing-07;
+  }
+
+  &__title {
+    @include type-style('heading-05');
+    color: $text-primary;
+    margin: 0 0 $spacing-03;
+  }
+
+  &__subtitle {
+    @include type-style('body-02');
+    color: $text-secondary;
+    margin: 0;
+    max-width: 42rem;
+  }
+
+  // Section 1: Metrics Overview
+  &__metrics {
+    margin-bottom: $spacing-06;
+  }
+
+  // Section 2: Filters
+  &__filters {
+    margin-bottom: $spacing-07;
+  }
+
+  // Section 3: Content
+  &__content {
+    margin-bottom: $spacing-06;
+  }
+
+  &__results-header {
+    margin-bottom: $spacing-06;
+  }
+
+  &__results-title {
+    @include type-style('heading-03');
+    color: $text-primary;
+    margin: 0;
+  }
+
+  &__no-results {
+    text-align: center;
+    padding: $spacing-09 $spacing-05;
+
+    p {
+      @include type-style('body-01');
+      color: $text-secondary;
+      margin-bottom: $spacing-05;
+    }
+  }
+}
+
+// Metric Tiles
+.metric-tile {
+  height: 100%;
+  padding: $spacing-05;
+  display: flex;
+  align-items: center;
+  gap: $spacing-05;
+  transition: all 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  border-left: 3px solid transparent;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left-color: $border-interactive;
+  }
+
+  &--highlight {
+    background-color: $layer-accent-01;
+
+    .metric-tile__number {
+      color: $text-primary;
+    }
+  }
+
+  &__icon {
+    color: $icon-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+      fill: currentColor;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__number {
+    @include type-style('productive-heading-06');
+    color: $text-primary;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: $spacing-02;
+  }
+
+  &__label {
+    @include type-style('label-01');
+    color: $text-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.32px;
+    margin-bottom: $spacing-01;
+  }
+
+  &__sublabel {
+    @include type-style('caption-01');
+    color: $text-secondary;
+  }
+}
+
+// Filter Bar
+.filter-bar {
+  padding: $spacing-06;
+}
+
+.view-mode-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-03;
+
+  &__label {
+    @include type-style('label-01');
+    color: $text-secondary;
+  }
+}
+
+// Experience Container (Timeline & List Views)
+.experience-container {
+  position: relative;
+
+  // Timeline View
+  &--timeline {
+    .experience-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: $spacing-06;
+      margin-bottom: $spacing-07;
+
+      @include breakpoint-down(md) {
+        grid-template-columns: auto 1fr;
+        gap: $spacing-05;
+        margin-bottom: $spacing-06;
+      }
+
+      @include breakpoint-down(sm) {
+        grid-template-columns: auto 1fr;
+        gap: $spacing-04;
+      }
+    }
+  }
+
+  // List View
+  &--list {
+    .experience-item {
+      margin-bottom: $spacing-05;
+
+      .experience-item__timeline-node {
+        display: none;
+      }
+    }
+  }
+}
+
+// Experience Item (Timeline Node + Card)
+.experience-item {
+  position: relative;
+
+  &--career-break {
+    .experience-card {
+      border-left-color: $support-info;
+      background-color: $layer-accent-01;
+    }
+
+    .experience-item__timeline-dot {
+      background-color: $support-info;
+      border-color: $support-info;
+    }
+  }
+
+  // Timeline Node
+  &__timeline-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+    flex-shrink: 0;
+  }
+
+  &__timeline-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $background-brand;
+    border: 3px solid $border-interactive;
+    flex-shrink: 0;
+    z-index: 2;
+    transition: all 200ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  }
+
+  &__timeline-line {
+    width: 3px;
+    flex: 1;
+    background-color: $border-subtle-01;
+    margin-top: $spacing-03;
+    min-height: 100%;
+  }
+
+  &:hover {
+    .experience-item__timeline-dot {
+      transform: scale(1.3);
+      box-shadow: 0 0 0 4px rgba(0, 95, 204, 0.2);
+    }
+  }
+}
+
+// Experience Card
+.experience-card {
+  padding: $spacing-06;
+  transition: all 200ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  border-left: 3px solid transparent;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    border-left-color: $border-interactive;
+  }
+
+  // Header Row
+  &__header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: $spacing-05;
+    margin-bottom: $spacing-05;
+    align-items: start;
+
+    @include breakpoint-down(md) {
+      grid-template-columns: auto 1fr;
+      gap: $spacing-04;
+    }
+
+    @include breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, $background-brand, $background-active);
+    color: $text-on-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    @include breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  &__header-content {
+    min-width: 0;
+  }
+
+  &__role {
+    @include type-style('productive-heading-03');
+    color: $text-primary;
+    margin: 0 0 $spacing-02;
+    line-height: 1.3;
+  }
+
+  &__company {
+    @include type-style('body-01');
+    color: $text-secondary;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  &__header-meta {
+    text-align: right;
+
+    @include breakpoint-down(md) {
+      grid-column: 1 / -1;
+      text-align: left;
+      padding-left: 60px;
+    }
+
+    @include breakpoint-down(sm) {
+      padding-left: 0;
+    }
+  }
+
+  &__date-range {
+    @include type-style('label-01');
+    color: $text-primary;
+    margin-bottom: $spacing-02;
+    font-weight: 600;
+  }
+
+  &__duration {
+    @include type-style('caption-01');
+    color: $text-secondary;
+  }
+
+  // Subheader Row
+  &__subheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-05;
+    margin-bottom: $spacing-05;
+    padding-bottom: $spacing-05;
+    border-bottom: 1px solid $border-subtle-01;
+
+    @include breakpoint-down(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-04;
+    }
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    @include type-style('label-01');
+    color: $text-secondary;
+
+    svg {
+      fill: $icon-secondary;
+      flex-shrink: 0;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-03;
+  }
+
+  // Body Content
+  &__body {
+    margin-bottom: $spacing-06;
+  }
+
+  &__summary {
+    @include type-style('body-01');
+    color: $text-primary;
+    line-height: 1.6;
+    margin: 0 0 $spacing-06;
+  }
+
+  &__section-title {
+    @include type-style('productive-heading-01');
+    color: $text-primary;
+    margin: 0 0 $spacing-04;
+    font-weight: 600;
+  }
+
+  &__responsibilities,
+  &__achievements {
+    margin-bottom: $spacing-06;
+  }
+
+  &__bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-04;
+
+    li {
+      display: flex;
+      align-items: start;
+      gap: $spacing-04;
+      @include type-style('body-01');
+      color: $text-secondary;
+      line-height: 1.6;
+
+      .bullet-icon {
+        flex-shrink: 0;
+        margin-top: 2px;
+        fill: $icon-primary;
+      }
+
+      span {
+        flex: 1;
+      }
+    }
+  }
+
+  // Skills Section
+  &__skills {
+    margin-bottom: $spacing-06;
+  }
+
+  &__skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-03;
+  }
+
+  // Links Section
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-03;
+    padding-top: $spacing-05;
+    border-top: 1px solid $border-subtle-01;
+  }
+}
+
+// Responsive Typography Adjustments
+@include breakpoint-down(md) {
+  .experience-page__title {
+    @include type-style('heading-04');
+  }
+
+  .experience-page__results-title {
+    @include type-style('heading-02');
+  }
+
+  .experience-card__role {
+    @include type-style('productive-heading-02');
+  }
+
+  .metric-tile__number {
+    @include type-style('productive-heading-05');
+  }
+}
+
+@include breakpoint-down(sm) {
+  .experience-page__title {
+    @include type-style('heading-03');
+  }
+
+  .metric-tile {
+    flex-direction: column;
+    text-align: center;
+
+    &__icon {
+      margin-bottom: $spacing-03;
+    }
+  }
+
+  .experience-item__timeline-node {
+    width: 24px;
+  }
+
+  .experience-item__timeline-dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .experience-item__timeline-line {
+    width: 2px;
+  }
+}
+
+// Smooth Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.experience-card {
+  animation: fadeIn 300ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.experience-item__timeline-node {
+  animation: slideInFromLeft 400ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+// Print Styles
+@media print {
+  .experience-page__filters,
+  .experience-card__links {
+    display: none;
+  }
+
+  .experience-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .experience-item__timeline-line {
+    background-color: #ccc;
+  }
+
+  .experience-item__timeline-dot {
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+
+// Accessibility Improvements
+.experience-card:focus-within {
+  outline: 2px solid $focus;
+  outline-offset: 2px;
+}
+
+// Dark Mode Support
+@media (prefers-color-scheme: dark) {
+  .metric-tile {
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .experience-card {
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .experience-item__timeline-dot {
+    box-shadow: 0 0 0 2px $background;
+  }
+}
+
+// Ensure proper spacing in Grid
+.cds--grid {
+  &.experience-page {
+    max-width: 100%;
+    padding-left: $spacing-05;
+    padding-right: $spacing-05;
+
+    @include breakpoint(lg) {
+      padding-left: $spacing-07;
+      padding-right: $spacing-07;
+    }
+
+    @include breakpoint(xlg) {
+      padding-left: $spacing-09;
+      padding-right: $spacing-09;
+    }
+  }
+}
+
+// Carbon Component Overrides
+.cds--search-input {
+  background-color: $field-01;
+}
+
+.cds--dropdown {
+  background-color: $field-01;
+}
+
+.cds--toggle__switch {
+  margin-left: 0;
+}
+
+// Specific styling for career break highlight
+.experience-item--career-break {
+  .experience-card__header-meta {
+    color: $support-info;
+  }
+
+  .experience-card__avatar {
+    background: linear-gradient(135deg, $support-info, $background-active);
+  }
+}
+
+// Loading States (for future enhancement)
+.experience-page--loading {
+  .experience-card {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+// Hover effects for better UX
+.cds--tag--filter {
+  cursor: pointer;
+  transition: all 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+  &:not(:disabled):hover {
+    background-color: $background-hover;
+    transform: scale(1.05);
+  }
+}
+
+// Timeline connector improvements
+.experience-container--timeline {
+  position: relative;
+
+  .experience-item:last-child {
+    .experience-item__timeline-line {
+      display: none;
+    }
+  }
+}
+
+// Compact List View specific styles
+.experience-container--list {
+  .experience-card {
+    margin-bottom: 0;
+  }
+
+  .experience-item {
+    &:hover {
+      .experience-card {
+        border-left-color: $border-interactive;
+      }
+    }
+  }
+}
+
+// Responsive grid adjustments for filters
+@include breakpoint-down(md) {
+  .filter-bar {
+    padding: $spacing-05;
+
+    .cds--grid {
+      row-gap: $spacing-05;
+    }
+  }
+
+  .view-mode-toggle {
+    margin-top: $spacing-04;
+  }
+}
+
+// Enhanced tag styling
+.experience-card__tags {
+  .cds--tag {
+    font-weight: 500;
+  }
+}
+
+// Better visual hierarchy
+.experience-card__role {
+  transition: color 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.experience-card:hover {
+  .experience-card__role {
+    color: $link-primary;
+  }
+}
+
+// Improved spacing for skills section
+.experience-card__skills-list {
+  .cds--tag {
+    margin: 0;
+  }
+}
+
+// Professional look for links
+.experience-card__links {
+  button,
+  a {
+    &:hover {
+      background-color: $background-hover;
+    }
+  }
+}
+
+// Smooth transitions for view mode changes
+.experience-container {
+  transition: all 300ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+// Additional mobile optimizations
+@include breakpoint-down(sm) {
+  .experience-card {
+    padding: $spacing-05;
+  }
+
+  .experience-card__header {
+    gap: $spacing-03;
+  }
+
+  .experience-card__subheader {
+    gap: $spacing-03;
+  }
+
+  .experience-card__bullet-list {
+    gap: $spacing-03;
+
+    li {
+      gap: $spacing-03;
+      font-size: 14px;
+    }
+  }
+
+  .filter-bar {
+    padding: $spacing-04;
+  }
+}
