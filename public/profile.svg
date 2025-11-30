@@ -1,0 +1,18 @@
+<svg width="640" height="640" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Portrait placeholder for Fatih Şengül</title>
+  <desc>Stylized avatar illustration with gradient background</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f62fe" />
+      <stop offset="100%" stop-color="#8a3ffc" />
+    </linearGradient>
+    <linearGradient id="shirt" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#161616" />
+      <stop offset="100%" stop-color="#393939" />
+    </linearGradient>
+  </defs>
+  <circle cx="320" cy="320" r="300" fill="url(#bg)" />
+  <circle cx="320" cy="240" r="120" fill="#f4f4f4" />
+  <path d="M160 500c0-94 72-146 160-146s160 52 160 146" fill="url(#shirt)" />
+  <path d="M216 500c14-54 56-88 104-88s90 34 104 88" fill="#6f6f6f" opacity="0.7" />
+</svg>
