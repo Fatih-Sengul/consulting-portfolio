@@ -21,8 +21,8 @@ import {
   Code,
   DataProcessing,
   DeliverInsights,
-  MachineLearning_05 as MachineLearning,
 } from '@carbon/pictograms-react';
+import Image from 'next/image';
 
 export default function LandingPage() {
   return (
@@ -75,7 +75,16 @@ export default function LandingPage() {
             <div className="home-page__hero-illustration">
               <AspectRatio ratio="1x1">
                 <div className="home-page__hero-illustration-content">
-                  <MachineLearning className="home-page__pictogram" />
+                  <div className="home-page__portrait-wrapper">
+                    <Image
+                      src="/profile.svg"
+                      alt="Portrait of Fatih Şengül"
+                      fill
+                      priority
+                      sizes="(max-width: 1056px) 80vw, 640px"
+                      className="home-page__portrait"
+                    />
+                  </div>
                   <Tile className="home-page__stats-overlay">
                     <div className="home-page__stats-item">
                       <span className="home-page__stats-number">6+</span>
